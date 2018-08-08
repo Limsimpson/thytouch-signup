@@ -7,6 +7,8 @@ import Title from './Title';
 import BorderTable from '../BorderTable';
 import SignupForm from './SignupForm';
 import Privacy from '../privacy';
+import Header from '../header';
+import Footer from '../footer';
 import * as Action from '../../actions';
 
 const Container = styled.div` /* index 전체 div */
@@ -72,8 +74,10 @@ const modalStyle = {
         right: 0,
         bottom: 0,
         width: '750px',
+        maxWidth: '100%',
         height: '100%',
-        backgroundColor: '#f5eff6'
+        backgroundImage: 'url(/img/bg_main.png)',
+        backgroundSize: 'cover'
     }
 }
 
@@ -86,6 +90,7 @@ class Survey extends Component{
     render(){
         return(
             <Fragment>
+                <Header/>
                 <Container>
                     <Title />
                     <TitleMargin />
@@ -103,6 +108,7 @@ class Survey extends Component{
                     >
                     <Privacy></Privacy>
                 </Modal>
+                <Footer/>
             </Fragment>
         );
     }

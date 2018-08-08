@@ -4,13 +4,25 @@ import AgreeBox from './AgreeBox';
 import SignaturePad from './SignaturePad';
 
 const Form = styled.form`
-    padding: 0 60px;
+    padding: 0 45px 0 75px;
     ul{
         margin: 0 auto;
         li{
+            position: relative;
             list-style: none;
+            &:before{
+                position: absolute;
+                top: 12px;
+                left: -30px;
+                width: 20px;
+                height: 26px;
+                content:'';
+                display:block;
+                background: url(/img/ico_form.png) no-repeat;
+                background-size: cover;
+            }
             border-bottom: 1px solid #722d7b;
-            padding-top: 70px;
+            margin-top: 70px;
 
             &.inputFlex{                          /* 이름, 부서, 이메일, 핸드폰 디자인 */
                 display: flex;
@@ -31,7 +43,7 @@ const Form = styled.form`
                 }
             }
             &.userName{                            /* 이름 디자인 */
-                padding-top: 50px;
+                margin-top: 50px;
                 label{
                     letter-spacing: 25.0px;
                 }
@@ -43,11 +55,14 @@ const Form = styled.form`
             }
             &.modal{                                /* 동의서 박스 디자인 */
                 border-bottom: 0 none; 
-                padding-top: 54px;
+                margin-top: 54px;
+                &:before{
+                    display: none;
+                }
             }
             &.sign{                                 /* 서명 패드 디자인 */
                 border-bottom: 0 none;
-                padding: 36px 0 60px;
+                margin: 36px 0 60px;
                 label{                    
                     letter-spacing: 25.0px;
                 }
@@ -62,12 +77,17 @@ const Form = styled.form`
     }
 
     @media (max-width: 750px){
-        padding: 0 30px;
+        padding: 0 22.5px 0 37.5px;
         ul{
             li{
-                list-style: none;
                 border-bottom: 0.5px solid #722d7b;
-                padding-top: 35px;
+                margin-top: 35px;
+                &:before{
+                    top: 6px;
+                    left: -15px;
+                    width: 10px;
+                    height: 13px;
+                }
                 &.inputFlex{                          /* 이름, 부서, 이메일, 핸드폰 디자인 */
                     label{
                         font-size: 15.5px;
@@ -79,7 +99,7 @@ const Form = styled.form`
                     }
                 }
                 &.userName{                            /* 이름 디자인 */
-                    padding-top: 25px;
+                    margin-top: 25px;
                     label{                        
                         letter-spacing: 12.5px;
                     }
@@ -95,8 +115,8 @@ const Form = styled.form`
                     margin-top: 27px;
                     margin-bottom: 26px;
                 }
-                &.sign{                                 /* 서명 패드 디자인 */
-                    padding: 18px 0 30px;
+                &.sign{                                 /* 서명 패드 디자인 */                    
+                    margin: 115px 0 30px;
                     label{
                         letter-spacing: 12.5px;
                     }

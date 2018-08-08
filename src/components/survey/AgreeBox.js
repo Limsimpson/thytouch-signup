@@ -69,7 +69,7 @@ const AgreeCheckbox = styled.div`
         color: #4d4d4f;
         line-height: 1;
         text-align: left;
-        padding-left: 14px;
+        padding-left: 10px;
     }
 
     label{
@@ -113,7 +113,7 @@ const AgreeCheckbox = styled.div`
         padding-bottom: 7px;
         span{
             font-size: 9px;
-            padding-left: 5px;
+            padding-left: 8px;
         }
 
         label{
@@ -122,7 +122,7 @@ const AgreeCheckbox = styled.div`
             cursor: pointer;
             position: absolute;
             top: 9px;
-            right: 37px;
+            right: 30px;
             border: 0.5px solid #92278f;
             box-sizing: border-box;
 

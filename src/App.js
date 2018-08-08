@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import NotoSansCJKkrBold from './fonts/NotoSansCJKkr-Bold.otf';
 import NotoSansCJKkrMedium from './fonts/NotoSansCJKkr-Medium.otf';
+
 import Survey from './components/survey';
 
 injectGlobal`
@@ -31,13 +32,16 @@ table,th,td,form,button{
 const Container = styled.div`
   width: 750px;
   height: 100%;
-  background-color: #f5eff6;
+  background-image: url(/img/bg_main.png);
+  background-size: cover;
   margin: 0 auto;
-  padding: 107px 78px;
+  padding: 0 78px;
   box-sizing: border-box;
   @media (max-width: 750px) {
+    position: relative; /* header footer 로고 media query 적용 시 위치 고정 */
     width: 100%;
-    padding: 53.5px 39px;
+    background-size: cover;
+    padding: 53.5px 39px 20px 39px;
   }
 `
 

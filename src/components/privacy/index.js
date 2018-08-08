@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import Header from '../header';
+import Footer from '../footer';
 import Title from './Title';
 import AgreeBar from './AgreeBar';
 import Section1 from './Section1';
@@ -9,45 +11,17 @@ import Section3 from './Section3';
 import Section4 from './Section4';
 import * as Action from '../../actions';
 
-/*
-const Title = styled.div`
-    border-radius: 10px;
-    border: 2px solid #92278f;
-    margin: 0 auto 21px;
-    padding: 15.1px 0;
-    background-color: transparent;
+const Container = styled.div`
+    width: 100%;
+    padding: 0 67.5px;
     box-sizing: border-box;
-
-    h1 {
-        font-size: 33px;
-        color: #92278f;
-        font-stretch: normal;
-        text-align: center;
-        letter-spacing: normal;
-        line-height: 1;
-        margin: 0;
-    }
-
-  h2{
-    font-size: 16.5px;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #722d7b;
-  }
-
     @media (max-width: 750px){
-            border-radius: 5px;
-            border: 1px solid #92278f;
-            margin: 0 auto 18px;
-            padding: 5.5px 0;        
-        h1{
-            font-size: 16.5px;
-        }
+        position: relative;
+        width: 100%;
+        background-size: cover;
+        padding: 53.5px 39px 20px 39px;
     }
 `
-*/
 
 const Address = styled.address`
     font-family: 'NotoSansCJKkr-Medium';
@@ -75,7 +49,8 @@ class Privacy extends Component{
 
     render(){
         return(
-            <Fragment>
+            <Container>
+                <Header/>
                 <Title />
                 <AgreeBar />
                 <Section1/>
@@ -86,7 +61,8 @@ class Privacy extends Component{
                     (주)사노피젠자임 코리아 서울특별시 서초구 반포대로 235 (반포동). 
                     T.02-2136-9000 www.sanofi.co.kr
                 </Address>
-            </Fragment>
+                <Footer/>
+            </Container>
         );
     }
 }

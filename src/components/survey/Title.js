@@ -4,7 +4,7 @@ import BorderTable from '../BorderTable';
 
 const TitleFont = styled.h1`
     font-size: 31.5px;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     color: #92278f;
     line-height: 1.2;
     text-align: center;
@@ -12,7 +12,7 @@ const TitleFont = styled.h1`
 
     @media (max-width: 750px) {
         font-size: 15.75px;
-        letter-spacing: -2px;
+        letter-spacing: -1.5px;
     }
 `
 
