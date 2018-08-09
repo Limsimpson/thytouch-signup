@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export default styled.div`
     position: relative;
+    vertical-align: text-top;
     span{
         font-family: 'NotoSansCJKkr-Medium';
-        font-size: 11.5px;        
+        font-size: 11.5px;
         color: #4d4d4f;
     }
 

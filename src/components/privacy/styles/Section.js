@@ -34,10 +34,10 @@ export default styled.div`
         h2{
             font-size: 8.25px;
             &:before{
-                top:3px;
+                top:2.5px;
                 left: -10px;
-                width: 7.5px;
-                height: 10px;
+                width: 7px;
+                height: 9px;
             }
         }
     }

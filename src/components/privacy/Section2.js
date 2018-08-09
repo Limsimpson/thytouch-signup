@@ -8,6 +8,7 @@ import * as Action from '../../actions';
 
 const Table = styled.table`
     margin-top: 5px;
+    border-collapse: collapse;
     td{
         font-size: 11.5px;
         font-weight: 500;
@@ -18,8 +19,9 @@ const Table = styled.table`
         line-height: 1;
         text-align: center;
         vertical-align: center;
-        border: 1px solid #fff;
         background-color: #f2eaf4;
+        border: 0.6px solid #fff;
+        box-sizing: border-box;
     }
     label{
         top: 1px;
@@ -34,8 +36,8 @@ const Table = styled.table`
     @media(max-width: 750px){
         margin-top: 2.5px;
         td{
-            font-size: 5.75px;
-            border: 0.5px solid #fff;
+            font-size: 5.75px;            
+            border: 0.3px solid #fff;
         }
         label{
             top: 5px;

@@ -27,22 +27,31 @@ const TransferTable = styled.table`
     font-stretch: normal;
     color: #4d4d4f;
     text-align: center;
+    border-collapse: collapse;
     margin: 10px 0;
     th{
         line-height: 2.5;
         background-color: #e2cae2;
+        border: 0.6px solid #fff;
+        box-sizing: border-box;
     }
     td{
         letter-spacing: -0.5px; 
         line-height: 1;
-        background-color: #f2eaf4; 
+        background-color: #f2eaf4;
+        border: 0.6px solid #fff;
+        box-sizing: border-box;
         padding: 5px;
     }
     @media (max-width: 750px){
         font-size: 5.75px;
         margin: 5px 0;
+        th{            
+            border: 0.3px solid #fff;
+        }
         td{
             padding: 2.5px;
+            border: 0.3px solid #fff;
         }
     }
 ` 

@@ -78,7 +78,7 @@ const AgreeCheckbox = styled.div`
         cursor: pointer;
         position: absolute;
         top: 5px;
-        right: 75px;
+        left: 290px;
         border: 1px solid #92278f;
         box-sizing: border-box;
 
@@ -122,7 +122,7 @@ const AgreeCheckbox = styled.div`
             cursor: pointer;
             position: absolute;
             top: 9px;
-            right: 30px;
+            left: 155px;
             border: 0.5px solid #92278f;
             box-sizing: border-box;
 
