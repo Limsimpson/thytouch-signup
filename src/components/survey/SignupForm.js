@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
 import AgreeBox from './AgreeBox';
 import SignaturePad from './SignaturePad';
+
+import {signup} from '../../api';
+import {b64toBlob} from '../../utils';
 
 const Form = styled.form`
     padding: 0 45px 0 75px;
@@ -101,7 +105,7 @@ const Form = styled.form`
                 &.firstName{                            /* 이름 디자인 */
                     margin-top: 25px;
                     label{                        
-                        letter-spacing: 12.5px;
+                        letter-spacing: -1.75px;
                     }
                 }
                 &.department, &.eMail, &.phone{         /* 부서, 이메일, 핸드폰 디자인*/
@@ -129,10 +133,79 @@ const Form = styled.form`
     }
 `
 
+const Button = styled.button` /* Submit Button */
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -94.5px;
+    font-size: 22.5px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.1;
+    letter-spacing: -1px;
+    color: #ffffff;
+    cursor: pointer;
+    border: 0 none;
+    border-radius: 10px;
+    width: 189px;
+    background-color: #92278f;
+    @media (max-width: 750px){
+        bottom: -10px;
+        left: 50%;
+        margin-left: -47.25px;
+        font-size: 11.25px;
+        font-weight: 500;
+        border: 0 none;
+        border-radius: 5px;
+        width: 94.5px;
+        background-color: #92278f;        
+    }
+`
+
 class SignupForm extends Component {
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        const {subAgree1Checked, subAgree2Checked} = this.props;
+        if (!subAgree1Checked || !subAgree2Checked){
+            alert('개인정보 수집 및 이용에 동의해 주세요.')
+            return;
+        }
+
+        if (this.refs.sig.isEmpty()){
+            alert('서명을 작성해 주세요.')
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('lastName', e.target[0].value);
+        formData.append('firstName', e.target[1].value);
+        formData.append('hospital', e.target[2].value);
+        formData.append('specialty', e.target[3].value);
+        formData.append('email', e.target[4].value);
+        formData.append('phone', e.target[5].value);
+        formData.append('signature', b64toBlob(this.refs.sig.toDataURL(), 'image/png'));
+        console.log(formData);
+
+        signup(formData)
+            .then(resp => {
+                console.log(resp);
+                alert('선생님의 정보가 성공적으로 등록 완료되었습니다.')
+            })
+            .catch(e => {
+                console.log(e);
+                if (!!e.response.data && e.response.data.message.match(/duplicate/g)){
+                    alert('이미 등록된 이메일입니다.')
+                } else {
+                    alert('선생님의 정보를 등록하는 도중에 에러가 발생하였습니다.')
+                }
+            })
+    }
+
     render(){
         return (
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
                 <ul>
                     <li className="inputFlex lastName">
                         <label htmlFor="lastName">성  (한글)</label>
@@ -163,12 +236,20 @@ class SignupForm extends Component {
                     </li>
                     <li className="sign">
                         <label htmlFor="sign">서명</label>
-                        <SignaturePad />
+                        <SignaturePad ref="sig"/>
                     </li>
-                </ul>                        
+                </ul>
+                <Button type="submit">SUBMIT</Button>
             </Form>
         );
     }
 }
 
-export default SignupForm;
+const mapStateToProps = (state) => {
+    return {
+        subAgree1Checked: state.subAgree1Checked,
+        subAgree2Checked: state.subAgree2Checked,
+    }
+}
+
+export default connect(mapStateToProps, null)(SignupForm);

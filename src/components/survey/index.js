@@ -35,36 +35,6 @@ const TitleMargin = styled.div` /* Title과 SignupForm 사이의 여백 */
     }
 `
 
-const Button = styled.button` /* Submit Button */
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    margin-left: -94.5px;
-    font-size: 22.5px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2.1;
-    letter-spacing: -1px;
-    color: #ffffff;
-    cursor: pointer;
-    border: 0 none;
-    border-radius: 10px;
-    width: 189px;
-    background-color: #92278f;
-    @media (max-width: 750px){
-        bottom: -10px;
-        left: 50%;
-        margin-left: -47.25px;
-        font-size: 11.25px;
-        font-weight: 500;
-        border: 0 none;
-        border-radius: 5px;
-        width: 94.5px;
-        background-color: #92278f;        
-    }
-`
-
 const modalStyle = {
     content: {
         margin: '0 auto',
@@ -97,7 +67,6 @@ class Survey extends Component{
                     <BorderTable>
                         <SignupForm/>
                     </BorderTable>
-                    <Button>SUBMIT</Button>
                 </Container>
                 <Modal 
                     isOpen={this.props.agreeModalOpened}

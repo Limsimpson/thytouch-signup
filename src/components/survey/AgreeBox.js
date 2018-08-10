@@ -176,7 +176,8 @@ class AgreeBox extends Component{
                     <span>동의합니다</span>
                     <input type="checkbox" id="agree" name="agree" 
                         checked={this.props.subAgree1Checked && this.props.subAgree2Checked}
-                        onClick={this.onClickAgree}/>
+                        onClick={this.onClickAgree}
+                    />
                     <label name="agree" htmlFor="agree"></label>
                     </div>
                 </AgreeCheckbox>

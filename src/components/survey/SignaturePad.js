@@ -13,10 +13,18 @@ const SignatureStyle = styled.div`
 `;
 
 class SignaturePad extends Component {
+    isEmpty = () => {
+        return this.refs.sig.isEmpty();
+    }
+
+    toDataURL = () => {
+        return this.refs.sig.toDataURL();
+    }
+
     render(){
         return (
             <SignatureStyle>
-                <ReactSignaturePad />
+                <ReactSignaturePad ref="sig"/>
             </SignatureStyle>
         );
     }

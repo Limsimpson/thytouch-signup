@@ -5,6 +5,8 @@ import App from './App';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
+console.log(process.env);
+
 ReactDOM.render(
     <Provider store={store}>
         <App />
