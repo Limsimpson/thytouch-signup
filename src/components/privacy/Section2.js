@@ -25,7 +25,7 @@ const Table = styled.table`
     }
     label{
         top: 1px;
-        right: 20px;
+        right: 18px;
 
         &:after{
             top: 2px;
@@ -37,11 +37,12 @@ const Table = styled.table`
         margin-top: 2.5px;
         td{
             font-size: 5.75px;            
+            line-height: 1.1;    
             border: 0.3px solid #fff;
         }
         label{
-            top: 5px;
-            right: 10px;
+            top: 6px;
+            right: 8px;
 
             &:after{
                 top: 1.5px;

@@ -52,7 +52,7 @@ export default styled.div`
         label{
             width: 8px;
             height: 8px;
-            top: 6px;
+            top: 5px;
             right: 5px;
             border: 0.5px solid #722d7b;
 

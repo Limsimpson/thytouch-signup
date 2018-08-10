@@ -11,7 +11,8 @@ export default styled.table`
     line-height: 1;
     td{
         text-align: left;
-        vertical-align: top;
+        vertical-align: top;        
+        line-height: 1.1;
     }
     @media (max-width: 750px){
         font-size: 5.75px;

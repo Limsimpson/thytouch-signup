@@ -4,17 +4,24 @@ import styled from 'styled-components';
 import * as Action from '../../actions';
 
 const FieldSet = styled.fieldset`
+    width: 389px;
     border: 0 none;
     border-radius: 10px;
     background-color: #fff;
-    padding: 17px 0 20px;
+    padding: 20px 0 8px 0;
+    box-sizing: border-box;
+    &:after{
+        display: block;
+        content: '';
+        clear: both;
+        zoom: 1;
+    }
     p{
         font-family: 'NotoSansCJKkr-Medium';
         font-size: 16.5px;
         font-weight: 500;
         font-style: normal;
         font-stretch: normal;
-        letter-spacing: -0.7px;
         color: #4d4d4f;
         line-height: 1.3;
         text-align: center;
@@ -23,12 +30,12 @@ const FieldSet = styled.fieldset`
         position: absolute;
         top: 0;
         left: 50%;
-        margin-left: -97.25px;
+        width: 194.5px;
         border: 0 none;
         border-radius: 5px;
-        background-color: #fff;   
-        width: 194.5px;
-        padding: 0 none;
+        background-color: #fff;
+        margin-left: -97.25px;
+        Zpadding: 10px 0 4px 0;
         p{
             font-size: 8.25px;
             letter-spacing: -0.35px;
@@ -47,93 +54,45 @@ const ModalButton = styled.button`
     text-align: left;
     border: 0 none;
     background-color: #92278f;
-    margin-left: 76px;
     padding: 9px 26px;
     @media (max-width: 750px){
         font-size: 9px;
-        margin-top: 6px;
-        margin-left: 0;
         padding: 4.5px 13px;
     }
 `
 const AgreeCheckbox = styled.div`
-    position: relative;
-    top: 12px;
-    padding-bottom: 14px;
+    padding: 12px 69px;
     background-color: transparent;
-    span{
-        font-size: 18px;
-        font-style: normal;
-        font-stretch: normal;
-        letter-spacing: normal;
-        color: #4d4d4f;
-        line-height: 1;
-        text-align: left;
+    div{
+        float: right;
         padding-left: 10px;
-    }
-
-    label{
-        width: 25px;
-        height: 25px;
-        cursor: pointer;
-        position: absolute;
-        top: 5px;
-        left: 290px;
-        border: 1px solid #92278f;
-        box-sizing: border-box;
-
-        &:after{
-            content: '';
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            top: 2px;
-            left: 5.5px;
-            border: 3px solid #92278f;
-            border-top: none;
-            border-right: none;
-            background: transparent;
-            opacity: 0;
-            transform: rotate(-45deg);
-        }
-        &:hover:after{
-            opacity: 0.3;
-        }
-    }
-
-    input[type=checkbox]{
-        visibility: hidden;
-        
-        &:checked + label:after, &:focus + label:after {
-            opacity: 1;
-        }
-    }
-    @media (max-width: 750px){
-        top: 6px;
-        padding-bottom: 7px;
         span{
-            font-size: 9px;
-            padding-left: 8px;
+            font-size: 18px;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            color: #4d4d4f;
         }
 
         label{
-            width: 12.5px;
-            height: 12.5px;
+            display: inline-block;
+            position: relative;
+            top: 5px;
+            right: 0;
+            width: 25px;
+            height: 25px;
             cursor: pointer;
-            position: absolute;
-            top: 9px;
-            left: 155px;
-            border: 0.5px solid #92278f;
+            border: 1px solid #92278f;
             box-sizing: border-box;
 
             &:after{
                 content: '';
-                width: 5px;
-                height: 5px;
+                width: 10px;
+                height: 10px;
                 position: absolute;
-                top: 1px;
-                left: 2.75px;
-                border: 1.5px solid #92278f;
+                top: 2px;
+                left: 5.5px;
+                border: 3px solid #92278f;
                 border-top: none;
                 border-right: none;
                 background: transparent;
@@ -142,6 +101,54 @@ const AgreeCheckbox = styled.div`
             }
             &:hover:after{
                 opacity: 0.3;
+            }
+        }
+
+        input[type=checkbox]{
+            visibility: hidden;
+            
+            &:checked + label:after, &:focus + label:after {
+                opacity: 1;
+            }
+        }
+    }
+    @media (max-width: 750px){
+        padding: 6px 20px;
+        div{
+            float: right;
+            padding-left: 0;
+            span{
+                font-size: 9px;
+            }
+
+            label{
+                display: inline-block;
+                position: relative;
+                top: 2.5px;
+                right: 7px;
+                width: 12.5px;
+                height: 12.5px;
+                cursor: pointer;
+                border: 0.5px solid #92278f;
+                box-sizing: border-box;
+
+                &:after{
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    position: absolute;
+                    top: 1px;
+                    left: 2.75px;
+                    border: 1.5px solid #92278f;
+                    border-top: none;
+                    border-right: none;
+                    background: transparent;
+                    opacity: 0;
+                    transform: rotate(-45deg);
+                }
+                &:hover:after{
+                    opacity: 0.3;
+                }
             }
         }
     }
@@ -164,12 +171,14 @@ class AgreeBox extends Component{
                     <ModalButton onClick={(e)=>{
                         e.preventDefault();
                         this.props.openAgreeModal();
-                    }}>내용보기</ModalButton>      
+                    }}>내용보기</ModalButton>
+                    <div>  
                     <span>동의합니다</span>
                     <input type="checkbox" id="agree" name="agree" 
                         checked={this.props.subAgree1Checked && this.props.subAgree2Checked}
                         onClick={this.onClickAgree}/>
                     <label name="agree" htmlFor="agree"></label>
+                    </div>
                 </AgreeCheckbox>
             </FieldSet>
         );

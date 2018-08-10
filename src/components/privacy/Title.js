@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BorderTable from '../BorderTable';
 
 const TitleFont = styled.h1`
-    font-size: 31.5px;
+    font-size: 31px;
     letter-spacing: normal;
     color: #92278f;
     line-height: 1.2;

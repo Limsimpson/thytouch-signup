@@ -14,7 +14,7 @@ import * as Action from '../../actions';
 const Container = styled.div` /* index 전체 div */
     position: relative;
     h1{
-        font-size: 31.5px;
+        font-size: 31px;
         letter-spacing: -2px;
         color: #92278f;
         line-height: 1.2;

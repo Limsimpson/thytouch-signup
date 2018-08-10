@@ -37,7 +37,7 @@ const TransferTable = styled.table`
     }
     td{
         letter-spacing: -0.5px; 
-        line-height: 1;
+        line-height: 1.1;
         background-color: #f2eaf4;
         border: 0.6px solid #fff;
         box-sizing: border-box;
@@ -68,13 +68,13 @@ class Section4 extends Component {
                 <TransferTable>
                     <thead>
                         <tr>
-                            <th style={{width: '43%'}}>
+                            <th style={{width: '42%'}}>
                                 목적                              
                             </th>
-                            <th style={{width: '43%'}}>
+                            <th style={{width: '42%'}}>
                                 위임 받는 자/제공받는 자
                             </th>
-                            <th style={{width: '14%'}}>
+                            <th style={{width: '16%'}}>
                                 형태와 직
                             </th>
                         </tr>
