@@ -42,10 +42,10 @@ const Form = styled.form`
                     box-shadow: none;
                 }
             }
-            &.userName{                            /* 이름 디자인 */
+            &.firstName{                            /* 이름 디자인 */
                 margin-top: 50px;
                 label{
-                    letter-spacing: 25.0px;
+                    letter-spacing: -3.5px;
                 }
             }
             &.department, &.eMail, &.phone{         /* 부서, 이메일, 핸드폰 디자인*/
@@ -98,7 +98,7 @@ const Form = styled.form`
                         height: 22.8px;
                     }
                 }
-                &.userName{                            /* 이름 디자인 */
+                &.firstName{                            /* 이름 디자인 */
                     margin-top: 25px;
                     label{                        
                         letter-spacing: 12.5px;
@@ -134,8 +134,12 @@ class SignupForm extends Component {
         return (
             <Form>
                 <ul>
-                    <li className="inputFlex userName">
-                        <label htmlFor="userName">이름</label>
+                    <li className="inputFlex lastName">
+                        <label htmlFor="lastName">성  (한글)</label>
+                        <input type="text" title="이름" required/>
+                    </li>
+                    <li className="inputFlex firstName">
+                        <label htmlFor="firstName">이름(한글)</label>
                         <input type="text" title="이름" required/>
                     </li>
                     <li className="inputFlex">
