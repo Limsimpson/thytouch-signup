@@ -56,7 +56,7 @@ class Section2 extends Component {
     render(){
         return (
             <Section>
-                <h2>2. 수집하는 개인정보의 항목</h2>
+                <h3>2. 수집하는 개인정보의 항목</h3>
                 <Table>
                     <tbody>
                         <tr>

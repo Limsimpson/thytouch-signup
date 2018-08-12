@@ -7,7 +7,7 @@ export default styled.div`
     padding: 10px 38px 10px 38px;
     background-color: #fff;    
 
-    h2{
+    h3{
         position: relative;
         font-size: 16.5px;
         font-style: normal;
@@ -31,7 +31,7 @@ export default styled.div`
         border-radius: 5px;
         margin-top: 5px;
         padding: 5px 19px 5px 19px;
-        h2{
+        h3{
             font-size: 8.25px;
             &:before{
                 top:2.5px;

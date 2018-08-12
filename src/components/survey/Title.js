@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import BorderTable from '../BorderTable';
 
-const TitleFont = styled.h1`
+const TitleFont = styled.h2`
     font-size: 31.5px;
     letter-spacing: -3px;
     color: #92278f;

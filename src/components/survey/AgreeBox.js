@@ -35,7 +35,7 @@ const FieldSet = styled.fieldset`
         border-radius: 5px;
         background-color: #fff;
         margin-left: -97.25px;
-        Zpadding: 10px 0 4px 0;
+        padding: 10px 0 4px 0;
         p{
             font-size: 8.25px;
             letter-spacing: -0.35px;
@@ -54,7 +54,7 @@ const ModalButton = styled.button`
     text-align: left;
     border: 0 none;
     background-color: #92278f;
-    padding: 9px 26px;
+    padding: 9px 23px;
     @media (max-width: 750px){
         font-size: 9px;
         padding: 4.5px 13px;

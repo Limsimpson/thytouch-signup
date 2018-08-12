@@ -46,10 +46,15 @@ const Form = styled.form`
                     box-shadow: none;
                 }
             }
-            &.firstName{                            /* 이름 디자인 */
+            &.lastName{                            /* 이름 디자인 */
                 margin-top: 50px;
                 label{
-                    letter-spacing: -3.5px;
+                    letter-spacing: -4px;
+                }
+            }
+            &.firstName{
+                label{
+                    letter-spacing: -4px;
                 }
             }
             &.department, &.eMail, &.phone{         /* 부서, 이메일, 핸드폰 디자인*/
@@ -67,15 +72,11 @@ const Form = styled.form`
             &.sign{                                 /* 서명 패드 디자인 */
                 border-bottom: 0 none;
                 margin: 36px 0 60px;
-                label{                    
+                label{
+                    font-size: 31px;
+                    color: #722d7b;         
                     letter-spacing: 25.0px;
                 }
-            }
-
-            label{                                  /* 전체 label 공통 디자인 */
-                font-size: 31px;
-                list-style: none;
-                color: #722d7b;
             }
         }
     }
@@ -102,10 +103,15 @@ const Form = styled.form`
                         height: 22.8px;
                     }
                 }
-                &.firstName{                            /* 이름 디자인 */
+                &.lastName{                            /* 이름 디자인 */
                     margin-top: 25px;
                     label{                        
-                        letter-spacing: -1.75px;
+                        letter-spacing: -2px;
+                    }
+                }
+                &.firstName{
+                    label{
+                        letter-spacing: -2px;
                     }
                 }
                 &.department, &.eMail, &.phone{         /* 부서, 이메일, 핸드폰 디자인*/
@@ -122,11 +128,9 @@ const Form = styled.form`
                 &.sign{                                 /* 서명 패드 디자인 */                    
                     margin: 115px 0 30px;
                     label{
+                        font-size: 15.5px;
                         letter-spacing: 12.5px;
                     }
-                }
-                label{                                  /* 전체 label 공통 디자인 */
-                    font-size: 15.5px;
                 }
             }
         }
@@ -209,27 +213,27 @@ class SignupForm extends Component {
                 <ul>
                     <li className="inputFlex lastName">
                         <label htmlFor="lastName">성  (한글)</label>
-                        <input type="text" title="이름" required/>
+                        <input type="text" title="이름" id="lastName" required/>
                     </li>
                     <li className="inputFlex firstName">
                         <label htmlFor="firstName">이름(한글)</label>
-                        <input type="text" title="이름" required/>
+                        <input type="text" title="이름" id="firstName" required/>
                     </li>
                     <li className="inputFlex">
                         <label htmlFor="company">소속기관</label>
-                        <input type="text" title="소속기관" required/>
+                        <input type="text" title="소속기관" id="company" required/>
                     </li>
                     <li className="inputFlex department">
                         <label htmlFor="department">근무과</label>
-                        <input type="text" title="근무과" required/>
+                        <input type="text" title="근무과" id="department" required/>
                         </li>
                     <li className="inputFlex eMail">
                         <label htmlFor="email">이메일</label>
-                        <input type="email" required />
+                        <input type="email" id="email" required />
                     </li>
                     <li className="inputFlex phone">
                         <label htmlFor="phone">휴대폰</label>
-                        <input type="tel" required />
+                        <input type="tel" id="phone" required />
                     </li>
                     <li  className="modal">
                         <AgreeBox />
