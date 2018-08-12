@@ -43,7 +43,6 @@ const FieldSet = styled.fieldset`
     }
 `
 const ModalButton = styled.button`
-    float: left;
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
@@ -65,27 +64,26 @@ const AgreeCheckbox = styled.div`
     padding: 12px 69px;
     background-color: transparent;
     div{
-        float: left;
-        padding-left: 20px;
-        label{
+        float: right;
+        padding-left: 10px;
+        span{
             font-size: 18px;
             font-style: normal;
             font-stretch: normal;
             letter-spacing: normal;
             color: #4d4d4f;
-            line-height: 2;
         }
 
-        span{
+        label{
             display: inline-block;
             position: relative;
-            top: 1.5px;
-            left: 4px;
+            top: 5px;
+            right: 0;
             width: 25px;
             height: 25px;
             cursor: pointer;
             border: 1px solid #92278f;
-            box-sizing: border-box;            
+            box-sizing: border-box;
 
             &:after{
                 content: '';
@@ -115,14 +113,19 @@ const AgreeCheckbox = styled.div`
         }
     }
     @media (max-width: 750px){
-        padding: 6px 34px;
+        padding: 6px 20px;
         div{
-            padding-left: 10px;
-            span{                
+            float: right;
+            padding-left: 0;
+            span{
+                font-size: 9px;
+            }
+
+            label{
                 display: inline-block;
                 position: relative;
-                top: 2px;
-                left: 2px;
+                top: 2.5px;
+                right: 7px;
                 width: 12.5px;
                 height: 12.5px;
                 cursor: pointer;
@@ -147,13 +150,6 @@ const AgreeCheckbox = styled.div`
                     opacity: 0.3;
                 }
             }
-
-            label{
-                vertical-align: 7px;
-                margin-top: -20px;
-                font-size: 9px;
-                line-height: 0;
-            }
         }
     }
 `
@@ -176,14 +172,13 @@ class AgreeBox extends Component{
                         e.preventDefault();
                         this.props.openAgreeModal();
                     }}>내용보기</ModalButton>
-                    <div>
-                        <label name="agree" htmlFor="agree">동의합니다</label>
-                        <span>
-                        <input type="checkbox" id="agree" name="agree" 
-                            checked={this.props.subAgree1Checked && this.props.subAgree2Checked}
-                            onClick={this.onClickAgree}
-                        />
-                        </span>
+                    <div>  
+                    <span>동의합니다</span>
+                    <input type="checkbox" id="agree" name="agree" 
+                        checked={this.props.subAgree1Checked && this.props.subAgree2Checked}
+                        onClick={this.onClickAgree}
+                    />
+                    <label name="agree" htmlFor="agree"></label>
                     </div>
                 </AgreeCheckbox>
             </FieldSet>
